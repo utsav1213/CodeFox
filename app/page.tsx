@@ -1,14 +1,8 @@
-import { Button } from "@/components/ui/button";
+//in future i will create landing page for me 
 import { requireAuth } from "@/module/auth/utils/auth-utils";
-import Logout from "@/module/auth/components/logout";
-
+import { redirect } from "next/navigation";
 export default async function Home() {
   await requireAuth();
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <Logout>
-        <Button>Logout</Button>
-</Logout>
-    </div>
-  );
+  return redirect('/dashboard')
+  ;
 }
